@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bruna & Dani's Wedding</title>
+  <style>
+    body { font-family: 'Helvetica Neue', sans-serif; margin: 0; background: #fff8f0; color: #333; }
+    header { background: #e6e2dd; padding: 2rem; text-align: center; }
+    header h1 { margin: 0; font-size: 2.5rem; }
+    .section { padding: 2rem; max-width: 800px; margin: auto; }
+    .section h2 { color: #856d8a; }
+    .gallery img { width: 100%; border-radius: 12px; margin-bottom: 1rem; }
+    .countdown { font-size: 1.5rem; color: #bb4d4d; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bruna & Dani's Wedding</h1>
+    <p>January 7, 2026 | Kedma, Neve Ilan</p>
+    <div class="countdown" id="countdown">Loading countdown...</div>
+  </header>
+
+  <section class="section">
+    <h2>You're Invited!</h2>
+    <p>We are so excited to celebrate our big day with you. Your presence is the greatest gift of all — but if you'd like to give something, you can find more information below.</p>
+  </section>
+
+  <section class="section">
+    <h2>Registry</h2>
+    <p>You can visit our registry here: <a href="https://www.labayitgifts.com/dani-and-Bruna" target="_blank">Labayit Gifts – Dani & Bruna</a></p>
+  </section>
+
+  <section class="section">
+    <h2>Gift Contributions</h2>
+    <p><strong>Zelle:</strong> example@email.com<br/>
+    <strong>Israeli Bank Transfer:</strong> Account #12345678, Bank Leumi</p>
+  </section>
+
+  <section class="section">
+    <h2>RSVP</h2>
+    <p>Please let us know if you can make it! Fill out our form <a href="LINK_TO_GOOGLE_FORM" target="_blank">here</a>.</p>
+  </section>
+
+  <section class="section">
+    <h2>Travel Info</h2>
+    <p>Details coming soon.</p>
+  </section>
+
+  <section class="section">
+    <h2>Accommodations</h2>
+    <p>Details coming soon.</p>
+  </section>
+
+  <section class="section gallery">
+    <h2>Our Story in Photos</h2>
+    <img src="DBP-113.jpg" alt="Proposal on the beach"/>
+    <img src="DBP-204.jpg" alt="Hug at sunset"/>
+    <img src="pictures.jpg" alt="Walking hand-in-hand"/>
+  </section>
+
+  <script>
+    const countdown = () => {
+      const eventDate = new Date("2026-01-07T00:00:00Z");
+      const now = new Date();
+      const diff = eventDate - now;
+      if (diff < 0) return document.getElementById("countdown").innerText = "It's the big day!";
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      document.getElementById("countdown").innerText = `${days} days, ${hours} hours, and ${minutes} minutes to go!`;
+    };
+    countdown();
+    setInterval(countdown, 60000);
+  </script>
+</body>
+</html>
